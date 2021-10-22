@@ -27,7 +27,7 @@ server.listen(3300,()=>{
     console.log('Node server created at port 3300');
 }); */
 
-//server.js
+/* //server.js
 const http = require('http'),
     url = require('url'),
 
@@ -56,5 +56,30 @@ server = http.createServer(makeServer);
 server.listen(3300,()=>{
 console.log('Node server created at port 3300');
 });
+ */
 
+//server.js
+const express = require("express"),
+    server = expres();
+server.set ("port", process.env.PORT || 3000);
 
+//Basic routes
+server.get("/", (request, response)=>{
+    response.send("Home page");
+});
+
+server.get("/about",(request,response)=>{
+    response.send("About page");
+});
+
+//Express error handling middleware
+server.use((request,response)=>{
+    response.type("text/plain");
+    response.status(505);
+    response.send("Error page");
+});
+
+//Binging to a port
+server.listen(300, ()=>{
+    console.log("Express server started at port 3000");
+});
