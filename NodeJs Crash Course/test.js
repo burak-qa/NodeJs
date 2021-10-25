@@ -1,6 +1,6 @@
-/* const name = 'Sahin';
+const name = 'Sahin';
 
-console.log(name); */
+console.log(name); 
 
 const greet = (name) => {
     console.log(`Hello, ${name}`);
